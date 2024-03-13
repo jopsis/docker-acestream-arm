@@ -2,7 +2,7 @@ FROM balenalib/raspberry-pi-debian
 
 RUN apt update -y && apt upgrade -y
 
-ADD engine_3.1.61_armv7.tar.gz /tmp
+ADD engine_3.1.80_armv7.tar.gz /tmp
 
 RUN cd /tmp/acestream.engine && \
     mv androidfs/system / && \
