@@ -1,8 +1,21 @@
 # docker-acestream-arm
 
-[Dockerhub](https://hub.docker.com/r/danielchc/acestream-arm)
+[Dockerhub](https://hub.docker.com/r/jopsis/acestream-arm)
 
 Docker image to run acestream-engine in RaspberryPI or armv7 system.
+
+## Quick Start with Docker Compose
+
+The easiest way to run Acestream:
+
+```bash
+docker-compose up -d
+```
+
+To stop:
+```bash
+docker-compose down
+```
 
 ## How to build
 ```
@@ -15,13 +28,17 @@ ADD acestream.conf  /acestream.engine/
 
 
 ## How to run
-To run with default config
+
+### Using Docker Run
+
+To run with default config:
+```bash
+docker run -d --name acestream --privileged -p 8621:8621 -p 6878:6878 jopsis/acestream:arm
 ```
-docker run -it --rm --privileged -p8621:8621 -p6878:6878  acestream-arm
-```
-If you want a custom configuration
-```
-docker run -it --rm --privileged -v $(pwd)/acestream.conf:/acestream.engine/acestream.conf -p8621:8621 -p6878:6878  acestream-arm
+
+If you want a custom configuration:
+```bash
+docker run -d --name acestream --privileged -v $(pwd)/acestream.conf:/acestream.engine/acestream.conf -p 8621:8621 -p 6878:6878 jopsis/acestream:arm
 ```
 
 ## How to play
