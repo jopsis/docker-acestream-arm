@@ -2,14 +2,8 @@ name: Build and Push Docker Images
 
 on:
   push:
-    branches:
-      - main
     tags:
-      - 'v*'
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+      - '*'
 
 jobs:
   build-and-push-arm32:
@@ -38,8 +32,8 @@ jobs:
         with:
           context: ./arm32
           platforms: linux/arm/v7
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: jopsis/acestream:arm32
+          push: true
+          tags: jopsis/acestream:arm32-${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -69,7 +63,7 @@ jobs:
         with:
           context: ./arm64
           platforms: linux/arm64
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: jopsis/acestream:arm64
+          push: true
+          tags: jopsis/acestream:arm64-${{ github.ref_name }}
           cache-from: type=gha
           cache-to: type=gha,mode=max

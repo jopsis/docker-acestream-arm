@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  acestream:
+    image: jopsis/acestream:arm32-v3.2.13
+    container_name: acestream-arm32
+    restart: unless-stopped
+    ports:
+      - "6878:6878"
+    environment:
+      - ACESTREAM_HOME=/acestream
+      - ANDROID_ROOT=/system
+      - ANDROID_DATA=/data
+    networks:
+      - acestream-network
+    # Optional: uncomment to customize AceStream parameters
+    # command: >
+    #   python main.py
+    #   --bind-all
+    #   --client-console
+    #   --live-cache-type memory
+    #   --live-mem-cache-size 104857600
+    #   --disable-sentry
+    #   --log-stdout
+
+networks:
+  acestream-network:
+    driver: bridge
