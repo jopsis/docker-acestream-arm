@@ -16,8 +16,8 @@ ENV ACESTREAM_HOME=/acestream \
 # Copy the acestream engine files
 # You need to extract these from the original image or obtain the AceStream Android APK
 #COPY acestream /acestream
-COPY acestream_3.2.13.arm7v.zip / 
-RUN unzip /acestream_3.2.13.arm7v.zip && rm /acestream_3.2.13.arm7v.zip
+COPY acestream_3.2.14.arm7v.zip / 
+RUN unzip /acestream_3.2.14.arm7v.zip && rm /acestream_3.2.14.arm7v.zip
 
 # Copy Android system libraries
 # These are extracted from Android system or the original image
