@@ -4,10 +4,12 @@ Docker containers for AceStream Engine optimized for ARM architectures (ARM32 an
 
 ## Available Images
 
-The images are available on Docker Hub:
+The images are available on Docker Hub with version tags:
 
-- **ARM32 (ARMv7)**: `jopsis/acestream:arm32`
-- **ARM64 (ARMv8)**: `jopsis/acestream:arm64`
+- **ARM32 (ARMv7)**: `jopsis/acestream:arm32-<version>`
+- **ARM64 (ARMv8)**: `jopsis/acestream:arm64-<version>`
+
+Example tags: `arm32-v3.2.13`, `arm64-v3.2.13`
 
 ## Usage
 
@@ -15,12 +17,12 @@ The images are available on Docker Hub:
 
 For ARM32 devices:
 ```bash
-docker pull jopsis/acestream:arm32
+docker pull jopsis/acestream:arm32-v3.2.13
 ```
 
 For ARM64 devices:
 ```bash
-docker pull jopsis/acestream:arm64
+docker pull jopsis/acestream:arm64-v3.2.13
 ```
 
 ### Run the container
@@ -30,7 +32,7 @@ For ARM32:
 docker run -d \
   --name acestream \
   -p 6878:6878 \
-  jopsis/acestream:arm32
+  jopsis/acestream:arm32-v3.2.13
 ```
 
 For ARM64:
@@ -38,16 +40,24 @@ For ARM64:
 docker run -d \
   --name acestream \
   -p 6878:6878 \
-  jopsis/acestream:arm64
+  jopsis/acestream:arm64-v3.2.13
 ```
 
 ### Using docker-compose
 
-You can also use the included `docker-compose.yml` file:
+Separate docker-compose files are provided for each architecture:
 
+For ARM32:
 ```bash
-docker-compose up -d
+docker-compose -f docker-compose.arm32.yml up -d
 ```
+
+For ARM64:
+```bash
+docker-compose -f docker-compose.arm64.yml up -d
+```
+
+**Note**: Remember to update the image tag in the docker-compose file to match the version you want to use.
 
 ## Configuration
 
@@ -68,8 +78,9 @@ Default parameters:
 
 ## Docker Hub
 
-Images are automatically built and published to Docker Hub via GitHub Actions:
+Images are automatically built and published to Docker Hub via GitHub Actions when a new tag is pushed:
 - Repository: [jopsis/acestream](https://hub.docker.com/r/jopsis/acestream)
+- Images are tagged with the git tag name (e.g., pushing tag `v3.2.13` creates `arm32-v3.2.13` and `arm64-v3.2.13`)
 
 ## License
 
