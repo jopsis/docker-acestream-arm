@@ -9,7 +9,7 @@ The images are available on Docker Hub with version tags:
 - **ARM32 (ARMv7)**: `jopsis/acestream:arm32-<version>`
 - **ARM64 (ARMv8)**: `jopsis/acestream:arm64-<version>`
 
-Example tags: `arm32-v3.2.13`, `arm64-v3.2.13`
+Example tags: `arm32-v3.2.14`, `arm64-v3.2.14`
 
 ## Usage
 
@@ -17,12 +17,12 @@ Example tags: `arm32-v3.2.13`, `arm64-v3.2.13`
 
 For ARM32 devices:
 ```bash
-docker pull jopsis/acestream:arm32-v3.2.13
+docker pull jopsis/acestream:arm32-v3.2.14
 ```
 
 For ARM64 devices:
 ```bash
-docker pull jopsis/acestream:arm64-v3.2.13
+docker pull jopsis/acestream:arm64-v3.2.14
 ```
 
 ### Run the container
@@ -32,7 +32,7 @@ For ARM32:
 docker run -d \
   --name acestream \
   -p 6878:6878 \
-  jopsis/acestream:arm32-v3.2.13
+  jopsis/acestream:arm32-v3.2.14
 ```
 
 For ARM64:
@@ -40,7 +40,7 @@ For ARM64:
 docker run -d \
   --name acestream \
   -p 6878:6878 \
-  jopsis/acestream:arm64-v3.2.13
+  jopsis/acestream:arm64-v3.2.14
 ```
 
 ### Using docker-compose
@@ -80,7 +80,7 @@ Default parameters:
 
 Images are automatically built and published to Docker Hub via GitHub Actions when a new tag is pushed:
 - Repository: [jopsis/acestream](https://hub.docker.com/r/jopsis/acestream)
-- Images are tagged with the git tag name (e.g., pushing tag `v3.2.13` creates `arm32-v3.2.13` and `arm64-v3.2.13`)
+- Images are tagged with the git tag name (e.g., pushing tag `v3.2.14` creates `arm32-v3.2.14` and `arm64-v3.2.14`)
 
 ## License
 
