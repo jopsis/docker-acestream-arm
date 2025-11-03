@@ -70,6 +70,7 @@ Default parameters:
 - `--live-mem-cache-size 104857600`: Set cache size to 100MB
 - `--disable-sentry`: Disable Sentry error reporting
 - `--log-stdout`: Output logs to stdout
+- `--disable-upnp`: Disable UPnP
 
 ## Compatibility
 

@@ -22,7 +22,8 @@ services:
     #   --live-mem-cache-size 104857600
     #   --disable-sentry
     #   --log-stdout
-
+    #   --disable-upnp
+    
 networks:
   acestream-network:
     driver: bridge

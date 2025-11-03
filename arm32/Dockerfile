@@ -34,4 +34,4 @@ ADD main.py dnsproxyd.py /acestream/
 WORKDIR /acestream
 
 # Default command to run AceStream engine
-CMD ["python", "main.py", "--bind-all", "--client-console", "--live-cache-type", "memory", "--live-mem-cache-size", "104857600", "--disable-sentry", "--log-stdout" ]
+CMD ["python", "main.py", "--bind-all", "--client-console", "--live-cache-type", "memory", "--live-mem-cache-size", "104857600", "--disable-sentry", "--log-stdout", "--disable-upnp" ]
