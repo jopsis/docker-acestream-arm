@@ -21,11 +21,12 @@ RUN unzip /acestream_3.2.14.arm8.zip && rm /acestream_3.2.14.arm8.zip
 # Copy Android system libraries
 # These are extracted from Android system or the original image
 COPY system.zip /
-RUN unzip /system.zip && rm /system.zip
+RUN unzip /system.zip && rm /system.zip && \
+    chmod -R +x /system/bin && \
+    chmod -R +x /acestream/python/bin
 
-
-# Add main.py and dnsproxyd.py scripts
-ADD main.py dnsproxyd.py /acestream/
+# Add main.py, dnsproxyd.py and app_bridge.py scripts
+ADD main.py dnsproxyd.py app_bridge.py /acestream/
 
 # Set working directory
 WORKDIR /acestream
