@@ -42,5 +42,8 @@ ADD main.py dnsproxyd.py /acestream/
 # Set working directory
 WORKDIR /acestream
 
+# Expose AceStream ports
+EXPOSE 6878 8621
+
 # Default command to run AceStream engine
 CMD ["python", "main.py", "--bind-all", "--client-console", "--live-cache-type", "memory", "--live-mem-cache-size", "104857600", "--disable-sentry", "--log-stdout" ]
