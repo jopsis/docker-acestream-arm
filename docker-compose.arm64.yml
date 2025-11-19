@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   acestream:
-    image: jopsis/acestream:arm64-v3.2.13
+    image: jopsis/acestream:arm64-v3.2.14
     container_name: acestream-arm64
     restart: unless-stopped
     ports:
@@ -22,6 +22,7 @@ services:
     #   --live-mem-cache-size 104857600
     #   --disable-sentry
     #   --log-stdout
+    #   --disable-upnp
 
 networks:
   acestream-network:
